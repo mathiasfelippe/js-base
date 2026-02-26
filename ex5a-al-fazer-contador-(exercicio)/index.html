@@ -1,1 +1,46 @@
- <!-- 1ª Digitação (Resolva aqui o exercício) -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contador de Cliques</title>
+  <body>
+  </head>
+<style>
+    * {
+        background-color: rgb(0, 140, 128);
+        color: white;
+        font-size: 40px;
+        font-family: fantasy;
+        justify-items: center;
+    }
+</style>
+<br><br>
+  <!-- Botão que será usado para interagir com o JavaScript -->
+  <button id="myButton">Contador de Cliques</button>
+
+  <!-- Parágrafo que será modificado pelo JavaScript -->
+  <p id="num"> 0 </p> 
+
+
+  <!-- Java Script -->
+  <script>
+    // Valor inicial = 1
+     const myButton = document.querySelector('#myButton');
+    let value = 1;
+ 
+ // Reconhece o click e aumenta +1 a cada click
+ myButton.addEventListener('click', () => {
+    num.textContent = `${value}`;
+    value += 1; 
+
+ // Altera a cor do paragráfo (verde par, vermelho ímpar)
+    if (value%2 == 0) {
+        num.style.backgroundColor = 'red';
+    } else {
+        num.style.backgroundColor = 'green';
+    }
+    })
+  </script>
+</body>
+</html>

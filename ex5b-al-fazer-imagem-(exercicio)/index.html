@@ -68,10 +68,25 @@
   <!-- Script JavaScript embutido na página -->
   <script>
 
-
     // 1ª Digitação (Resolva aqui o exercício)
+const image = document.querySelector("#myImage");
+const text = document.querySelector("#myText");
+const subText = document.querySelector("#subText")
 
+const ImagemOriginal = 'image.png';
+const ImagemAlternativa = 'image2.png';
 
+image.addEventListener ('mouseover', () => {
+  image.src = ImagemAlternativa;
+  text.textContent = 'Imagem Alterada!';
+  subText.textContent = 'Doja Cat - Little Cat';
+});
+
+  image.addEventListener ('mouseout', () => {
+  image.src = ImagemOriginal;
+  text.textContent = 'Passe o mouse sobre a imagem.';
+  subText.textContent = 'Sabrina Carpenter - Linda';
+});
   </script>
 </body>
 </html>
