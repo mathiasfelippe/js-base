@@ -69,19 +69,25 @@
   <script>
 
     // 1ª Digitação (Resolva aqui o exercício)
+    //  Seleciona a imagem e os parágrafos pelo ID
 const image = document.querySelector("#myImage");
 const text = document.querySelector("#myText");
 const subText = document.querySelector("#subText")
 
+  
+    // Define a URL das imagens
 const ImagemOriginal = 'image.png';
 const ImagemAlternativa = 'image2.png';
 
+
+// Adiciona o efeito > mouse passa por cima
 image.addEventListener ('mouseover', () => {
   image.src = ImagemAlternativa;
   text.textContent = 'Imagem Alterada!';
   subText.textContent = 'Doja Cat - Little Cat';
 });
 
+// Remove o efeito > mouse sai de cima
   image.addEventListener ('mouseout', () => {
   image.src = ImagemOriginal;
   text.textContent = 'Passe o mouse sobre a imagem.';
@@ -89,4 +95,4 @@ image.addEventListener ('mouseover', () => {
 });
   </script>
 </body>
-</html>
+</html>/
