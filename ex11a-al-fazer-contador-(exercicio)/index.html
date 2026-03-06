@@ -38,21 +38,53 @@
   </style>
 </head>
 <body>
+
   <!-- Temporizador -->
   <div id="timer">0</div>
 
   <!-- Botões de controle -->
   <button id="startButton">Iniciar</button>
-  <button id="pauseButton">Pausar</button>
-  <button id="resetButton">Resetar</button>
+  <button id="pause">Pausar</button>
+  <button id="reset">Resetar</button>
 
-  <!-- Script JavaScript embutido na página -->
+  <!-- Script JavaScript -->
   <script>
-
 
     // 1ª Digitação (Resolva aqui o exercício)
 
+    let tempo = 0; // tempo inicia no 0
+    let intervalo = null; // o cronometro começa desligado
+
+   //  busca elementos da página
+    const timer = document.getElementById("timer");
+    const startButton = document.getElementById("startButton");
+    const pauseButton = document.getElementById("pause");
+    const resetButton = document.getElementById("reset");
+
+      function atualizarTimer() {
+      tempo++; // adiciona + 1 ao tempo
+      timer.textContent = tempo; // atualiza o tempo na página
+    }
+
+    startButton.addEventListener("click", function () {
+      if (intervalo === null) { // verifica se o contador ja foi iniciado (cada clique a mais aumentaria a velocidade)
+        intervalo = setInterval(atualizarTimer, 1000); // inicia o contador e aumenta o número a cada 1 seg
+      }
+    });
+
+      pause.addEventListener("click", function () {
+      clearInterval(intervalo); // faz a contagem parar
+      intervalo = null; // faz com que o contador inicie novamente ao clicar em start
+    });
+
+      reset.addEventListener("click", function () {
+      clearInterval(intervalo); // faz a contagem parar
+      intervalo = null;
+      tempo = 0; // deixa o contador igual a 0
+      timer.textContent = tempo; // mostra o tempo (0) na tela
+    });
 
   </script>
+
 </body>
 </html>

@@ -58,6 +58,18 @@
 
        // 1ª Digitação (Resolva aqui o exercício)
 
+      //  busca elementos da página
+      const quoteText = document.getElementById("quote");
+      const button = document.getElementById("newQuoteButton");
+    
+         function gerarCitacao() {
+           const indiceAleatorio = Math.floor(Math.random() * quotes.length); // seleciona uma citação aleatória. 
+           // Math.floor e Math.random são usados para gerar números inteiros (no caso, frases) aleatórios em um intervalo, foi feita uma pesquisa e optamos a utilização para maior facilidade na montagem do código
+           quoteText.textContent = quotes[indiceAleatorio]; // atualiza a frase na página
+    }
+
+      // clique no botão
+     button.addEventListener("click", gerarCitacao);
 
   </script>
 </body>
